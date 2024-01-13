@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Docker Build') {
       steps {
-        sh 'docker build -t workshop:latest  .'
+        sh 'docker build -t workshop:latest .'
       }
     }
     stage('Docker Push') {
