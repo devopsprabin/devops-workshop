@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Start'){
       steps {
-        sh "docker login -u devopsprabin -p aHHHHHHGGFFDFDDDDSDCVVVBNNMMMK "
+        // sh "docker login -u devopsprabin -p aHHHHHHGGFFDFDDDDSDCVVVBNNMMMK "
         echo "Pipeline Started && Login successfully "
       }
     }
