@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('Start'){
       steps {
-        // sh "docker login -u devopsprabin -p aHHHHHHGGFFDFDDDDSDCVVVBNNMMMK "
         echo "Pipeline Started && Login successfully "
       }
     }
@@ -14,6 +13,7 @@ pipeline {
     }
     stage('Docker Push') {
       steps {
+          sh "docker login -u devopsprabin -p '%41ry&i*bs#5P7NU12'"
           sh 'docker push workshop:latest'
         }
       }
