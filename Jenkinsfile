@@ -24,9 +24,18 @@ pipeline {
     }
     stage('deployed to Ubuntu server ') {
       steps{
+        sshagent(credentials:['ssh_cluster']){
           sh 'ssh  -o StrictHostKeyChecking=no  root@$192.168.100.112 "cd /home/workshop && docker-compose up -d"'
         }
       }
     }
+    stage('deployed to dev server ') {
+      steps{
+        sshagent(credentials:['ssh_cluster']){
+          sh 'ssh  -o StrictHostKeyChecking=no  root@192.168.100.112 "uptime"'
+        }
+      }
+    }
   }
+}
 
