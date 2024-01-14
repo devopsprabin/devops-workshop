@@ -8,18 +8,18 @@ pipeline {
     }
     stage('Docker Build') {
       steps {
-        sh 'docker build -t workshop:latest .'
+        sh 'docker build -t devopsprabin/workshop:latest .'
       }
     }
     stage('Docker Push') {
       steps {
           sh "docker login -u devopsprabin -p '%41ry&i*bs#5P7NU12'"
-          sh 'docker push workshop:latest'
+          sh 'docker push devopsprabin/workshop:latest'
         }
       }
     stage('Clean docker image') {
       steps {
-        sh 'docker rmi workshop:latest'
+        sh 'docker rmi devopsprabin/workshop:latest'
       }
     }
     stage('deployed to Ubuntu server ') {
